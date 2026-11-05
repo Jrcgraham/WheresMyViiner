@@ -42,7 +42,7 @@ function render(){
 }
 function selectSpot(id){active=id;if(!map)return;const m=markers.get(id);map.setView(m.getLatLng(),15,{animate:true});m.openPopup();render();if(innerWidth<741)$('map').scrollIntoView({behavior:'smooth',block:'start'})}
 $('search').addEventListener('input',render);document.querySelectorAll('[data-style]').forEach(b=>b.addEventListener('click',()=>{style=b.dataset.style;document.querySelectorAll('[data-style]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));render()}));$('favoritesToggle').onclick=()=>{onlyFavorites=!onlyFavorites;$('favoritesToggle').setAttribute('aria-pressed',String(onlyFavorites));$('favoritesToggle').textContent=onlyFavorites?'♥ Favorites only':'♡ Favorites';render()};render();
-const SUBMISSION_ENDPOINT='PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE';
+const SUBMISSION_ENDPOINT='https://script.google.com/macros/s/AKfycbx6KX257mo8V5QL1eagDEqMJrMl6FLViFjIxhesELToiiQBuTusU58V8odExgHMB3j0GQ/exec';
 const modal=$('modal');$('suggest').onclick=()=>{modal.classList.add('open');$('place').focus()};$('cancel').onclick=()=>modal.classList.remove('open');modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')});document.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});
 $('form').onsubmit=async e=>{
  e.preventDefault();
@@ -52,8 +52,9 @@ $('form').onsubmit=async e=>{
   status.textContent='Submissions are not connected yet. The owner needs to add the private Google Sheet endpoint.';
   return;
  }
- const payload=new URLSearchParams({place:$('place').value.trim(),address:$('address').value.trim(),sausage:$('sausage').value.trim(),serving:$('serving').value,notes:$('notes').value.trim(),website:''});
- if(!payload.get('place')||!payload.get('address')||!payload.get('sausage'))return;
+
+ const payload=new URLSearchParams({place:$('place').value.trim(),address:$('address').value.trim(),dish:$('sausage').value.trim(),style:$('serving').value,notes:$('notes').value.trim()});
+ if(!payload.get('place')||!payload.get('address')||!payload.get('dish'))return;
  const btn=e.target.querySelector('[type="submit"]');btn.disabled=true;status.textContent='Sending suggestion…';
  try{
   // Apps Script redirects responses to a different origin. no-cors lets a public static site POST,
