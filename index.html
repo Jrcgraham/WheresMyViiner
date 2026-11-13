@@ -115,10 +115,20 @@ body{background-color:#f1dfb9;background-image:radial-gradient(#78563d20 .7px,tr
 .viiner-map-pin{display:block!important;width:54px!important;height:54px!important;object-fit:cover!important;border:2px solid #251a16!important;border-radius:14px!important;background:#fffaf0!important;box-shadow:0 3px 0 #251a16,0 4px 8px #0005!important}
 @media(max-width:780px){.full-marquee{aspect-ratio:auto!important}.full-marquee img{height:auto!important;object-fit:contain!important}}
 @media(max-width:430px){.full-marquee{aspect-ratio:auto!important}.full-marquee img{height:auto!important}}
+
+/* v0.8: marquee and finder share one compact diner-board header */
+.directory{margin-top:14px!important}
+.directory-intro{display:grid;grid-template-columns:minmax(0, 43%) minmax(0, 1fr);gap:22px;align-items:center;margin-bottom:18px;padding-bottom:18px;border-bottom:3px double #a72e20}
+.intro-art{min-width:0}
+.intro-art img{display:block;width:100%;height:auto;border:3px solid #261b16;border-radius:8px;box-shadow:4px 4px 0 #261b16}
+.directory-intro .directory-top{display:flex;flex-direction:column;align-items:flex-start;gap:16px;margin:0}
+.directory-intro .directory-top h2{font-size:clamp(28px,3.5vw,54px)!important;line-height:1.1;margin:10px 0!important}
+.intro-subtitle{font:italic clamp(14px,1.4vw,19px)/1.45 Georgia,serif;color:#684435;margin:0}
+.directory-intro .directory-count{max-width:none}
+@media(max-width:780px){.directory-intro{grid-template-columns:1fr;gap:15px}.intro-art{max-width:500px;margin:auto}.directory-intro .directory-top{gap:10px}.directory-intro .directory-top h2{font-size:clamp(26px,6vw,39px)!important}.directory-intro .directory-count{display:block;max-width:none}}
 </style></head><body><header class="masthead"><div class="brand"><img src="viiner-icon.png" alt="" class="brand-icon"><div><h1>where’s my viiner?</h1><p class="tag">one world. infinite wieners.</p></div></div><button id="suggest" class="header-suggest">✦ Spill the beans! <span>Suggest a spot</span></button></header>
 <main class="shell">
-<section class="diner-strip full-marquee" aria-label="Where’s My Viiner vintage diner sign"><img src="viiner-marquee.png" alt="Where’s My Viiner vintage neon marquee above our two cartoon sausage mascots at their diner stand"></section>
-<section class="directory" id="directory"><div class="directory-top"><div><p class="eyebrow">TALLINN • ESTONIA</p><h2>Find your next bite.</h2></div><div class="directory-count" id="communityCount">Six original spots + community picks</div></div>
+<section class="directory" id="directory"><div class="directory-intro"><div class="intro-art"><img src="viiner-marquee.png" alt="Where’s My Viiner vintage neon marquee above our two cartoon sausage mascots at their diner stand"></div><div class="directory-top"><div><p class="eyebrow">TALLINN • ESTONIA</p><h2>Find your next bite.</h2><p class="intro-subtitle">Good dogs. Bad jokes. Your next viiner is waiting.</p></div><div class="directory-count" id="communityCount">Six original spots + community picks</div></div></div>
 <div class="controls" id="searchControls"><div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" placeholder="Search a spot, street or neighborhood…" aria-label="Search locations"></div><div class="switches" role="group" aria-label="Serving style"><button data-style="all" aria-pressed="true">All viiners</button><button data-style="dressed" aria-pressed="false">🌭 Dressed</button><button data-style="naked" aria-pressed="false">Naked</button></div><button class="secondary" id="favoritesToggle" aria-pressed="false">♡ Favorites</button></div>
 <div class="board-head"><div><span class="starburst">✳</span><strong>Today's viiner lineup</strong><small>Serving styles and menus may change</small></div><div class="mobile-views" role="group" aria-label="Choose map or list"><button type="button" id="showList" aria-pressed="true">☷ Spots</button><button type="button" id="showMap" aria-pressed="false">⌖ Map</button></div></div>
 <div class="layout show-list" id="resultsLayout"><section id="list" class="list" aria-label="Sausage locations"></section><div id="map" aria-label="Interactive map of Tallinn"></div></div>
