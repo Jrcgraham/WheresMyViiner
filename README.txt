@@ -1,7 +1,10 @@
-WHERE’S MY VIINER? v0.6 — MARQUEE & TITLE CARD UPDATE
+Where’s My Viiner — v0.7 artwork and palette update
 
-Copy ALL files from this ZIP to the root of your WheresMyViiner GitHub repository. Replace index.html, commit, and Push origin in GitHub Desktop.
+1. Extract all files into the root of your existing WheresMyViiner GitHub repository.
+2. Replace index.html and the image files when prompted. Keep any other existing repository files.
+3. Commit changes and Push origin in GitHub Desktop.
+4. Reload your GitHub Pages site; if Chrome caches the previous version, try a hard refresh.
 
-Changes: full original marquee art replaces cropped screenshot with Edit button; Limelight, Special Elite and Oswald fonts evoke 1930s cartoon title cards; new dressed-mascot map pins replace emoji markers. Existing submissions, approvals, filtering, favorites, and map behavior retained. Ratings are still not implemented.
+Changes: Full marquee image now displays without cropping at its original 3:2 ratio; map markers use the same viiner-icon.png as the header (no extra circular background); colors match the illustration’s aged cream, red, mustard and teal.
 
-Google Fonts require internet access; system font fallbacks are supplied. Your existing Google Apps Script URL is unchanged. Verify the approval feed and submission form after deployment.
+All existing listing, suggestion, and approval functionality is unchanged. The marquee is now taller on desktop and mobile because the full illustration is visible.

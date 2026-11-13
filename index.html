@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#741b20"><title>where's my viiner? — Tallinn sausage finder</title><link rel="icon" type="image/png" href="viiner-icon.png"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><style>@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Oswald:wght@400;500;600;700&family=Special+Elite&display=swap');
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#a92d20"><title>where's my viiner? — Tallinn sausage finder</title><link rel="icon" type="image/png" href="viiner-icon.png"><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"><style>@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Oswald:wght@400;500;600;700&family=Special+Elite&display=swap');
 :root{--wine:#741b20;--cream:#fff6e7;--mustard:#e6a72a;--ink:#2d2522}*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font:16px system-ui,-apple-system,sans-serif}header{padding:18px 18px 12px;max-width:1080px;margin:auto;display:flex;align-items:center}h1{font:900 clamp(26px,5vw,43px) Georgia,serif;color:var(--wine);margin:0;letter-spacing:-1.4px}.tag{font-size:12px;margin:3px 0 0;color:#795e55}.logo{display:flex;align-items:center;gap:12px}.logo svg{width:48px;height:60px;flex:none}.shell{max-width:1080px;margin:auto;padding:0 16px 32px}.intro{display:flex;gap:9px;flex-wrap:wrap;margin:10px 0 14px}.pill{background:#f1e2c8;color:#6d4134;border-radius:20px;padding:6px 10px;font-size:12px;font-weight:700}.notice{background:#fff0c9;border-left:4px solid var(--mustard);padding:10px 12px;border-radius:5px;font-size:13px;margin-bottom:12px}input,textarea,button,select{font:inherit}input,textarea,select{border:1px solid #d6c7b6;border-radius:10px;padding:12px;background:white;color:var(--ink);width:100%}.controls{display:flex;gap:9px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.controls input{flex:1 1 240px}.switches{display:flex;flex-wrap:wrap;gap:5px}.switches button{padding:10px 12px;background:#f0e2cf;color:var(--wine)}.switches button[aria-pressed=true]{background:var(--wine);color:#fff}.controls>.secondary{margin-left:auto}button{border:0;border-radius:10px;background:var(--wine);color:white;font-weight:700;padding:11px 14px;cursor:pointer}button.secondary{background:#f0e2cf;color:var(--wine)}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--mustard);outline-offset:2px}.layout{display:grid;grid-template-columns:1.25fr 1fr;gap:14px}#map{height:600px;border-radius:15px;border:1px solid #dfd1bf;z-index:0}.list{height:600px;overflow:auto;display:flex;flex-direction:column;gap:10px}.spot{background:#fffdf7;border:1px solid #e6d9c7;border-radius:14px;padding:14px}.map-unavailable{height:100%;display:grid;place-items:center;padding:24px;text-align:center;background:#f1e2c8;border-radius:15px}.spot.active{border:2px solid var(--wine);padding:13px}.spot h3{font:800 21px Georgia,serif;color:var(--wine);margin:0 0 7px}.meta{color:#655b53;font-size:13px;margin:5px 0}.spot .actions{display:flex;gap:7px;margin-top:10px;flex-wrap:wrap}.spot button,.spot a{font-size:13px;padding:8px 10px}.spot a{display:inline-flex;align-items:center;border-radius:10px;background:#f0e2cf;color:var(--wine);font-weight:700;text-decoration:none}.label{display:inline-block;background:#f1e2c8;color:#6d4134;border-radius:20px;padding:4px 9px;font-size:12px;font-weight:700}.empty{padding:24px;background:white;border-radius:14px}.footer{margin-top:16px;font-size:12px;color:#77685c}.modal{position:fixed;inset:0;background:#0008;display:none;align-items:center;justify-content:center;z-index:2000;padding:18px}.modal.open{display:flex}.dialog{background:var(--cream);border-radius:16px;padding:22px;max-width:440px;width:100%;max-height:90vh;overflow:auto}.dialog h2{font:800 26px Georgia,serif;color:var(--wine);margin:0 0 12px}.dialog label{display:block;margin:12px 0 5px;font-weight:700;font-size:13px}.dialog .buttons{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}.trap{position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden}.leaflet-popup-content{font-family:system-ui,sans-serif}.leaflet-popup-content strong{color:var(--wine)}@media(max-width:740px){header{padding:13px 16px}.logo svg{width:38px;height:48px}h1{font-size:28px}.controls>.secondary{margin-left:0}.layout{grid-template-columns:1fr}#map{height:46vh;min-height:300px}.list{height:auto;max-height:none}}
 
 /* Vintage diner visual system; existing map and submission logic preserved. */
@@ -93,6 +93,28 @@ button,.controls button,.spot .actions button,.spot .actions a,.label,.directory
 .viiner-map-pin img{width:40px;height:40px;object-fit:cover;border-radius:50%}
 @media(max-width:780px){.full-marquee{aspect-ratio:2.1/1!important}.full-marquee img{object-position:center center!important}.brand h1{font-size:clamp(19px,4.2vw,30px)!important}}
 @media(max-width:430px){.full-marquee{aspect-ratio:1.85/1!important}.brand h1{font-size:21px!important}}
+
+/* v0.7: full-artwork banner, uncluttered mascot pins, artwork-matched palette */
+:root{--wine:#a72e20;--cream:#f1dfb9;--mustard:#f6b32d;--ink:#231d18;--line:#261b16;--teal:#29484b}
+body{background-color:#f1dfb9;background-image:radial-gradient(#78563d20 .7px,transparent .7px);color:var(--ink)}
+.full-marquee{aspect-ratio:auto!important;height:auto!important;max-height:none!important;min-height:0!important;background:var(--teal)!important;overflow:visible!important;border-color:var(--line)!important}
+.full-marquee img{width:100%!important;height:auto!important;max-height:none!important;min-height:0!important;object-fit:contain!important;object-position:center!important}
+.brand h1,.directory-top h2,.board-head strong,.spot h3,.bottom-banner strong{color:#a72e20!important}
+.brand .tag{color:#684435!important}
+.directory,.spot{background:#f9edce!important;border-color:#2b211b!important}
+.controls{background:#edc879!important;border-color:#2b211b!important}
+.controls .search-wrap input{background:#fff6dd!important}
+.switches button,.controls>.secondary,button.secondary,.spot .actions a{background:#f3d99e!important;color:#5a2b21!important}
+.switches button[aria-pressed=true],.mobile-views button[aria-pressed=true],.spot .actions .view,.header-suggest,.bottom-banner button{background:#ad3021!important;color:#fff3d8!important}
+.board-head{border-color:#a72e20!important}
+.directory-count,.label{background:#f2c766!important}
+.bottom-banner{background:#e7c381!important}
+.notice{background:#f6e6b8!important;border-left-color:#ac3424!important}
+#map{border-color:#2b211b!important}
+.viiner-pin-wrapper{border:0!important;background:transparent!important}
+.viiner-map-pin{display:block!important;width:54px!important;height:54px!important;object-fit:cover!important;border:2px solid #251a16!important;border-radius:14px!important;background:#fffaf0!important;box-shadow:0 3px 0 #251a16,0 4px 8px #0005!important}
+@media(max-width:780px){.full-marquee{aspect-ratio:auto!important}.full-marquee img{height:auto!important;object-fit:contain!important}}
+@media(max-width:430px){.full-marquee{aspect-ratio:auto!important}.full-marquee img{height:auto!important}}
 </style></head><body><header class="masthead"><div class="brand"><img src="viiner-icon.png" alt="" class="brand-icon"><div><h1>where’s my viiner?</h1><p class="tag">one world. infinite wieners.</p></div></div><button id="suggest" class="header-suggest">✦ Spill the beans! <span>Suggest a spot</span></button></header>
 <main class="shell">
 <section class="diner-strip full-marquee" aria-label="Where’s My Viiner vintage diner sign"><img src="viiner-marquee.png" alt="Where’s My Viiner vintage neon marquee above our two cartoon sausage mascots at their diner stand"></section>
@@ -128,7 +150,7 @@ function rebuildMarkers(){
     if(!grouped.has(key))grouped.set(key,[]);grouped.get(key).push(s);
   }
   if(!map)return;
-  const pin=L.divIcon({html:'<div class="viiner-map-pin"><img src="viiner-pin.png" alt=""></div>',className:'viiner-pin-wrapper',iconSize:[48,56],iconAnchor:[24,54],popupAnchor:[0,-52]});
+  const pin=L.divIcon({html:'<img class="viiner-map-pin" src="viiner-icon.png" alt="">',className:'viiner-pin-wrapper',iconSize:[54,54],iconAnchor:[27,50],popupAnchor:[0,-49]});
   for(const group of grouped.values()){
     const s=group[0],marker=L.marker([s.lat,s.lng],{icon:pin});
     marker.on('click',()=>{active=s.id;render()});
