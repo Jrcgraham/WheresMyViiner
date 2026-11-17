@@ -136,7 +136,15 @@ body{background-color:#f1dfb9;background-image:radial-gradient(#78563d20 .7px,tr
 .game-play-link img{width:105px;height:105px;object-fit:contain;flex-shrink:0}
 .game-play-link span{font:400 clamp(17px,2vw,23px)/1.17 'Limelight',Georgia,serif}
 @media(max-width:700px){.game-launch .game-play-link{max-width:none;justify-content:center}.game-play-link img{width:90px;height:90px}}
-</style></head><body><header class="masthead"><div class="brand"><img src="viiner-icon.png" alt="" class="brand-icon"><div><h1>where’s my viiner?</h1><p class="tag">one world. infinite wieners.</p></div></div><button id="suggest" class="header-suggest">✦ Tell us about your viiner ! <span>Suggest a spot</span></button></header>
+
+/* Compact game shortcut beside Suggest a Spot in the masthead. */
+.header-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.header-game-link{display:inline-flex;align-items:center;gap:8px;min-height:52px;padding:4px 13px 4px 5px;background:#ad3021;color:#fff3d8;border:2px solid #30231c;border-radius:4px;box-shadow:2px 2px 0 #30231c;text-decoration:none;white-space:nowrap;font:400 17px/1.1 'Limelight',Georgia,serif;transition:transform .1s}
+.header-game-link:hover{transform:translateY(-2px)}
+.header-game-link:focus-visible{outline:3px solid #f6b32d;outline-offset:3px}
+.header-game-link img{width:43px;height:43px;object-fit:contain;flex-shrink:0}
+@media(max-width:760px){.masthead{flex-wrap:wrap}.header-actions{width:100%;justify-content:space-between;gap:7px}.header-game-link{flex:1;justify-content:center;font-size:clamp(13px,3.3vw,17px);padding-right:7px}.header-game-link img{width:36px;height:36px}.header-suggest{flex:1;white-space:normal}}
+</style></head><body><header class="masthead"><div class="brand"><img src="viiner-icon.png" alt="" class="brand-icon"><div><h1>where’s my viiner?</h1><p class="tag">one world. infinite wieners.</p></div></div><div class="header-actions"><a class="header-game-link" href="game.html" aria-label="Play the Game!"><img src="viiner-running-mustache.png" alt="" width="42" height="44"><span>Play the Game!</span></a><button id="suggest" class="header-suggest">✦ Tell us about your viiner ! <span>Suggest a spot</span></button></div></header>
 <main class="shell">
 <section class="directory" id="directory"><div class="directory-intro"><div class="intro-art"><img src="viiner-marquee.png" alt="Where’s My Viiner vintage neon marquee above our two cartoon sausage mascots at their diner stand"></div><div class="directory-top"><div><p class="eyebrow">TALLINN • ESTONIA</p><h2>Find your next bite.</h2><p class="intro-subtitle">Everyday is a good day for a viiner. Lets find them.</p></div><div class="directory-count" id="communityCount">Six original spots + community picks</div></div></div>
 <div class="controls" id="searchControls"><div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" placeholder="Search a spot, street or neighborhood…" aria-label="Search locations"></div><div class="switches" role="group" aria-label="Serving style"><button data-style="all" aria-pressed="true">All viiners</button><button data-style="dressed" aria-pressed="false">🌭 Dressed</button><button data-style="naked" aria-pressed="false">Naked</button></div><button class="secondary" id="favoritesToggle" aria-pressed="false">♡ Favorites</button></div>
