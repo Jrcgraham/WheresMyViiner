@@ -9,7 +9,7 @@
 
 /* Standalone centered tip jar */
 .viiner-tip--standalone{width:100%;max-width:760px;margin:24px auto;padding:18px 16px;box-shadow:5px 5px 0 var(--ink);border:3px solid var(--ink);border-radius:9px}.viiner-tip--standalone .viiner-tip-mascot{width:clamp(85px,15vw,145px)}@media(max-width:480px){.viiner-tip--standalone{padding:14px 10px;gap:10px}.viiner-tip--standalone .viiner-tip-mascot{width:80px}}
-</style></head><body><header class="masthead"><a class="brand" href="index.html"><img src="viiner-icon.png" alt=""><span><strong>where’s my viiner?</strong><small>one world. infinite wieners.</small></span></a><a class="back" href="index.html">← Back to viiners</a></header><main><section class="board"><div class="heading"><span class="eyebrow">TALLINN • ESTONIA • A LITTLE SIDE QUEST</span><h1>WHERE’S MY VIINER?: THE GAME</h1><p>One bun. One mission. Infinite viiners.</p></div><div class="stats"><div>SCORE <b id="score">000000</b></div><div>BEST <b id="best">000000</b></div></div><div class="stage"><canvas id="game" width="960" height="480" aria-label="Side-scrolling runner game: tap or press Space to jump"></canvas><div class="overlay" id="overlay"><h2 id="overlayTitle">READY, BUN?</h2><p id="overlayMessage">Tap or press Space to jump. Double-jump to dodge traffic!</p><button id="start">LET'S ROLL! 🌭</button><form id="initialsForm" class="initials-form" novalidate hidden><label for="initials">ENTER YOUR INITIALS!</label><input id="initials" name="initials" type="text" inputmode="text" maxlength="3" minlength="3" pattern="[A-Za-z]{3}" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="AAA" aria-label="Three initials" required><p class="hint">THREE LETTERS FOR THE HALL OF VIINERS</p><button id="saveScore" type="button">SAVE MY SCORE</button></form></div></div><div class="under"><span>SPACE / ↑ / TAP = JUMP · DOUBLE JUMP ENABLED</span><button id="sound" type="button" aria-pressed="false">♪ SOUND OFF</button></div><details class="devbox" id="devPanel"><summary>🛠 DEVELOPER MODE (optional testing tools)</summary><div class="devcontrols"><label>Start in <select id="devDistrict"><option value="0">Old Town</option><option value="1">Downtown</option><option value="2">Tram Tracks</option><option value="3">Baltic Coast</option><option value="4">Countryside</option></select></label><label>Time of day <select id="devTime"><option value="random">Random</option><option value="day">Day</option><option value="sunset">Sunset</option><option value="night">Night</option><option value="sunrise">Sunrise</option></select></label><label class="check"><input type="checkbox" id="devSafe"> No collision damage</label><button id="devLaunch" type="button">START TEST RUN</button></div><p class="devnote">Test runs do not save scores. Normal LET’S ROLL starts the regular game.</p></details></section><section class="lower"><div class="panel"><h2>HALL OF VIINERS</h2><p id="hallStatus" aria-live="polite">Loading global top 10…</p><p id="scoreStatus" aria-live="polite"></p><ol id="scores"></ol></div><div class="panel"><h2>THE RULES</h2><p>Tap or press Space to jump. Tap twice to double-jump. Dodge obstacles, and jump onto vehicles or market-stall roofs to cross them.</p><p>Obstacles: <b>100</b> · Trams &amp; buses: <b>200</b> · Viiners: <b>500</b></p><p>Find a viiner to earn 500 points and one extra chance! Your first hit knocks the viiner loose; a second hit ends your run.</p></div></section><section class="viiner-tip viiner-tip--standalone" aria-label="Optional tip jar"><img class="viiner-tip-mascot" src="viiner-tip-mascot.png" alt="Smiling cartoon tip jar pointing toward the tip button" width="450" height="560" loading="lazy"><div class="viiner-tip-copy"><p>Like what we’re doing here? Hook us up with a viiner!</p><a href="https://ko-fi.com/wheresmyviiner" target="_blank" rel="noopener noreferrer">🌭 Buy us a Viiner</a><small>Always free. Always ad-free. Tips are optional.</small></div></section></main><footer>Made for hungry people, not algorithms. <a href="index.html">Back to the viiner finder</a><div style="margin-top:8px;color:#77685c">v0.9.5</div></footer><script>'use strict';
+</style></head><body><header class="masthead"><a class="brand" href="index.html"><img src="viiner-icon.png" alt=""><span><strong>where’s my viiner?</strong><small>one world. infinite wieners.</small></span></a><a class="back" href="index.html">← Back to viiners</a></header><main><section class="board"><div class="heading"><span class="eyebrow">TALLINN • ESTONIA • A LITTLE SIDE QUEST</span><h1>WHERE’S MY VIINER?: THE GAME</h1><p>One bun. One mission. Infinite viiners.</p></div><div class="stats"><div>SCORE <b id="score">000000</b></div><div>BEST <b id="best">000000</b></div></div><div class="stage"><canvas id="game" width="960" height="480" aria-label="Side-scrolling runner game: tap or press Space to jump"></canvas><div class="overlay" id="overlay"><h2 id="overlayTitle">READY, BUN?</h2><p id="overlayMessage">Tap or press Space to jump. Double-jump to dodge traffic!</p><button id="start">LET'S ROLL! 🌭</button><form id="initialsForm" class="initials-form" novalidate hidden><label for="initials">ENTER YOUR INITIALS!</label><input id="initials" name="initials" type="text" inputmode="text" maxlength="3" minlength="3" pattern="[A-Za-z]{3}" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="AAA" aria-label="Three initials" required><p class="hint">THREE LETTERS FOR THE HALL OF VIINERS</p><button id="saveScore" type="button">SAVE MY SCORE</button></form></div></div><div class="under"><span>SPACE / ↑ / TAP = JUMP · DOUBLE JUMP ENABLED</span><button id="sound" type="button" aria-pressed="false">♪ SOUND OFF</button></div><details class="devbox" id="devPanel"><summary>🛠 DEVELOPER MODE (optional testing tools)</summary><div class="devcontrols"><label>Start in <select id="devDistrict"><option value="0">Old Town</option><option value="1">Downtown</option><option value="2">Tram Tracks</option><option value="3">Baltic Coast</option><option value="4">Countryside</option></select></label><label>Time of day <select id="devTime"><option value="random">Random</option><option value="day">Day</option><option value="sunset">Sunset</option><option value="night">Night</option><option value="sunrise">Sunrise</option></select></label><label class="check"><input type="checkbox" id="devSafe"> No collision damage</label><label class="check"><input type="checkbox" id="devNear" checked> Start near storefront</label><button id="devLaunch" type="button">START TEST RUN</button></div><p class="devnote">Test runs do not save scores. All runs in this prototype are test runs and do not save scores.</p></details></section><section class="lower"><div class="panel"><h2>HALL OF VIINERS</h2><p id="hallStatus" aria-live="polite">Loading global top 10…</p><p id="scoreStatus" aria-live="polite"></p><ol id="scores"></ol></div><div class="panel"><h2>THE RULES</h2><p>Tap or press Space to jump. Tap twice to double-jump. Dodge obstacles, and jump onto vehicles or market-stall roofs to cross them.</p><p>Obstacles: <b>100</b> · Trams &amp; buses: <b>200</b> · Viiners: <b>500</b></p><p>Run through Circle K to earn 500 points and one extra chance! Jumping inside ends the run; crossing the roof skips the reward. Your first hit knocks the viiner loose; a second hit ends your run.</p></div></section><section class="viiner-tip viiner-tip--standalone" aria-label="Optional tip jar"><img class="viiner-tip-mascot" src="viiner-tip-mascot.png" alt="Smiling cartoon tip jar pointing toward the tip button" width="450" height="560" loading="lazy"><div class="viiner-tip-copy"><p>Like what we’re doing here? Hook us up with a viiner!</p><a href="https://ko-fi.com/wheresmyviiner" target="_blank" rel="noopener noreferrer">🌭 Buy us a Viiner</a><small>Always free. Always ad-free. Tips are optional.</small></div></section></main><footer>Made for hungry people, not algorithms. <a href="index.html">Back to the viiner finder</a><div style="margin-top:8px;color:#77685c">v0.10.3 — storefront test</div></footer><script>'use strict';
 const canvas=document.getElementById('game'),ctx=canvas.getContext('2d'),W=960,H=480,ground=434;
 const el=id=>document.getElementById(id);let state='ready',score=0,best=0,history=[],elapsed=0,dayStartOffset=0,last=0,world=0,speed=275,obstacles=[],pickups=[],spawn=1,bonusSpawn=7,invincible=0,hitGrace=0,sausageFly=null,viinerBanner=0,tram=null,bus=null,busWarning=0,busNext=9.6,tramSpawn=0,tramsThisScene=0,nextTramAt=13.6,sceneIndex=0,pendingScore=null,testRun=false,testSafe=false,sound=false,animation=0,deathTime=0,deathBits=[];
 try{best=Number(localStorage.getItem('viiner-game-best')||0);history=JSON.parse(localStorage.getItem('viiner-game-scores')||'[]')}catch{};
@@ -44,7 +44,7 @@ async function submitHall(name,points,id,duration){
  }catch(e){if(request===hallRequest)el('scoreStatus').textContent='Could not send score. Saved on this device.';}
  await refreshHall();
 }
-function reset(config=null){runId=Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,"0")).join("");pendingScore=null;el('initialsForm').hidden=true;el('start').hidden=false;testRun=!!config;testSafe=!!(config&&config.safe);score=0;elapsed=0;dayStartOffset=config&&config.time!=='random'?({day:10,sunset:39,night:70,sunrise:97}[config.time]??10):Math.random()*110;world=config?Math.max(0,Number(config.district)||0)*SEGMENT+Math.min(SEGMENT*.28,1900):0;speed=275;obstacles=[];pickups=[];spawn=1.4;bonusSpawn=15;invincible=0;hitGrace=0;sausageFly=null;viinerBanner=0;tram=null;bus=null;busWarning=0;busNext=9.6;tramSpawn=0;tramsThisScene=0;nextTramAt=13.6;sceneIndex=config?Math.max(0,Number(config.district)||0):0;bun.y=ground-bun.h;bun.vy=0;bun.jumps=0;bun.flip=0;state='playing';deathTime=0;deathBits=[];el('overlay').classList.add('hidden');updateUI()}
+function reset(config=null){runId=Array.from(crypto.getRandomValues(new Uint8Array(16)),b=>b.toString(16).padStart(2,"0")).join("");pendingScore=null;el('initialsForm').hidden=true;el('start').hidden=false;testRun=!!config;shop=null;shopBoundary=-1;shopTutorialSeen=false;powerBurst=0;testSafe=!!(config&&config.safe);score=0;elapsed=0;dayStartOffset=config&&config.time!=='random'?({day:10,sunset:39,night:70,sunrise:97}[config.time]??10):Math.random()*110;world=config?Math.max(0,Number(config.district)||0)*SEGMENT+(config.near?SEGMENT-1400-bun.x-1600:Math.min(SEGMENT*.28,1900)):0;speed=275;obstacles=[];pickups=[];spawn=1.4;bonusSpawn=45;invincible=0;hitGrace=0;sausageFly=null;viinerBanner=0;tram=null;bus=null;busWarning=0;busNext=9.6;tramSpawn=0;tramsThisScene=0;nextTramAt=13.6;sceneIndex=config?Math.max(0,Number(config.district)||0):0;bun.y=ground-bun.h;bun.vy=0;bun.jumps=0;bun.flip=0;state='playing';deathTime=0;deathBits=[];el('overlay').classList.add('hidden');updateUI()}
 function jump(){if(state!=='playing'){reset();return}if(bun.jumps<2){if(bun.jumps===1)bun.flip=0.001;bun.vy=bun.jumps===0?-690:-605;bun.jumps++;chirp(470,0.055)}}
 function chirp(f,d){if(!sound)return;try{const ac=chirp.ac||(chirp.ac=new(window.AudioContext||window.webkitAudioContext)());const o=ac.createOscillator(),g=ac.createGain();o.type='triangle';o.frequency.setValueAtTime(f,ac.currentTime);g.gain.setValueAtTime(.055,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+d);o.connect(g);g.connect(ac.destination);o.start();o.stop(ac.currentTime+d)}catch{}}
 function loseViiner(){
@@ -96,7 +96,7 @@ function tick(dt){
  }
  if(state!=='playing')return;
  if(bun.flip>0){bun.flip+=dt/.62;if(bun.flip>=1)bun.flip=0;}
- elapsed+=dt;viinerBanner=Math.max(0,viinerBanner-dt);world+=speed*dt;busWarning=Math.max(0,busWarning-dt);speed=Math.min(540,275+elapsed*3.2);
+ elapsed+=dt;powerBurst=Math.max(0,powerBurst-dt);viinerBanner=Math.max(0,viinerBanner-dt);world+=speed*dt;busWarning=Math.max(0,busWarning-dt);speed=Math.min(540,275+elapsed*3.2);
  const previousScene=sceneIndex;
  sceneIndex=Math.floor((world+1400)/SEGMENT)%scenes.length;
  // On entering downtown, bring the next transit encounter forward.
@@ -105,7 +105,7 @@ function tick(dt){
  if(sceneIndex===4&&previousScene!==4){nextTramAt=Math.min(nextTramAt,elapsed+3.0);}
  // Trams are timed encounters, independent of the scenery transition.
  // This guarantees regular appearances even when a player stays in one neighborhood.
- if(elapsed>=nextTramAt && !tram && !bus && tramSpawn<=0){
+ if(shopDistance()>2400 && !shop && elapsed>=nextTramAt && !tram && !bus && tramSpawn<=0){
    tramSpawn=1.35;
    nextTramAt=elapsed+((sceneIndex===1?7.5:sceneIndex===2?6.5:sceneIndex===4?9.5:15)+Math.random()*(sceneIndex===1?3:sceneIndex===2?2.5:sceneIndex===4?3.5:5))/1.25;
  }
@@ -115,7 +115,7 @@ function tick(dt){
  bun.vy+=1850*dt;const previousBottom=bun.y+bun.h;bun.y+=bun.vy*dt;
  // A tram approaches from the right. It is a physical platform, never a bonus cutscene.
  // Buses are fast, infrequent roof platforms. An early warning keeps them fair.
- if(elapsed>=busNext && !bus && !tram && tramSpawn<=0){
+ if(shopDistance()>2400 && !shop && elapsed>=busNext && !bus && !tram && tramSpawn<=0){
    bus={x:W+380,y:ground-112,w:260,h:112,landed:false,scored:false};
    busWarning=1.0;busNext=elapsed+((sceneIndex===1?11:sceneIndex===2?22:28)+Math.random()*(sceneIndex===1?5:sceneIndex===2?8:11))/1.25;
    spawn=Math.max(spawn,1.7);
@@ -145,8 +145,9 @@ function tick(dt){
  }
  // The normal ground is always available beneath and after the tram.
  if(bun.y>=ground-bun.h){bun.y=ground-bun.h;bun.vy=0;bun.jumps=0;}
+ updateShop(previousBottom);if(state!=='playing')return;
  spawn-=dt;bonusSpawn-=dt;
- if(spawn<=0){if(!tram && !bus && tramSpawn<=0){const oldTown=sceneIndex===0;
+ if(spawn<=0){if(!shop && shopDistance()>1700 && !tram && !bus && tramSpawn<=0){const oldTown=sceneIndex===0;
  const roll=Math.random();
  // Rare street-life obstacles; keep the taller stall well within jump reach.
  const type=oldTown?(roll<.28?0:roll<.55?1:roll<.80?2:3):sceneIndex===1?(roll<.48?3:roll<.72?4:Math.floor(Math.random()*3)):sceneIndex===2?(roll<.30?3:roll<.48?4:Math.floor(Math.random()*3)):sceneIndex===3?(roll<.34?1:roll<.68?2:roll<.84?3:4):sceneIndex===4?(roll<.52?5:6):Math.floor(Math.random()*3);
@@ -154,7 +155,7 @@ function tick(dt){
  const h=oldTown?(type===3?120:type===1?78:54+Math.random()*18):sceneIndex===3?(type===1?78:type===2?67:type===3?105:112):sceneIndex===4?(type===5?70:74):(sceneIndex===1||sceneIndex===2)&&type>=3?(type===3?105:112):(oldTown&&type===1?78:bike?67:34+Math.random()*31);
  const w=oldTown?(type===3?148:type===1?112:52+Math.random()*16):sceneIndex===3?(type===1?112:type===2?66:type===3?136:160):sceneIndex===4?(type===5?102:92):(sceneIndex===1||sceneIndex===2)&&type>=3?(type===3?136:160):(oldTown&&type===1?112:bike?83:35+Math.random()*18);
  obstacles.push({x:W+30,y:ground-h,w,h,type,scene:sceneIndex,cleared:false,variant:Math.floor(Math.random()*3)});}spawn=((sceneIndex===1||sceneIndex===2)?2.35+Math.random()*1.25:sceneIndex===3?2.1+Math.random()*1.2:sceneIndex===4?1.7+Math.random()*1.0:.95+Math.random()*.85-Math.min(.35,elapsed/200))}
- if(bonusSpawn<=0){pickups.push({x:W+40,y:ground-140-Math.random()*65,w:47,h:29});bonusSpawn=16+Math.random()*16;}
+ if(bonusSpawn<=0 && !shop && shopDistance()>1700){pickups.push({x:W+40,y:ground-140-Math.random()*65,w:47,h:29});bonusSpawn=45+Math.random()*25;}
  for(const o of obstacles)o.x-=speed*dt;
  for(const p of pickups)p.x-=speed*dt;
  obstacles=obstacles.filter(o=>o.x+o.w>-12);pickups=pickups.filter(p=>p.x+p.w>-12);
@@ -178,6 +179,96 @@ function tick(dt){
 function line(x1,y1,x2,y2,color,width=3){ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke()}
 function rounded(x,y,w,h,r,color,stroke='#261b16',sw=3){ctx.fillStyle=color;ctx.strokeStyle=stroke;ctx.lineWidth=sw;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();if(sw)ctx.stroke()}
 const SEGMENT=7600;
+const SHOP_W=300, SHOP_H=150;
+const SHOP_STYLES=[
+ {name:'CIRCLE K'},
+ {name:'GRILL STOP',sign:['GRILL','STOP','24H'],band:'#a93429',letters:'#fff0ce',wall:'#dc923c',frame:'#a95d2d',base:'#d88b36',interior:'#e9c58c',counter:'#a34c31'},
+ {name:'BILL THE BUTCHER',sign:['BILL THE','BUTCHER'],band:'#282625',letters:'#fff1da',wall:'#a76b3c',frame:'#37312c',base:'#a43b2b',interior:'#e6cbb1',counter:'#a43b2b'},
+ {name:'BAD HABITS',sign:['BAD','HABITS'],band:'#292827',letters:'#f5cf43',wall:'#51443a',frame:'#302b27',base:'#e0c9a0',interior:'#c9aa80',counter:'#e3cba0'}
+];
+let shop=null,shopBoundary=-1,shopTutorialSeen=false,powerBurst=0;
+function shopDistance(){return (Math.floor((world+1400+bun.x)/SEGMENT)+1)*SEGMENT-(world+1400+bun.x);}
+function updateShop(previousBottom){
+ const camera=world+1400;
+ if(!shop){const boundary=(Math.floor((camera+bun.x)/SEGMENT)+1)*SEGMENT;
+ if(boundary!==shopBoundary && boundary-camera<W+SHOP_W){shopBoundary=boundary;shop={kind:(Math.floor(boundary/SEGMENT)-1)%SHOP_STYLES.length,x:boundary-camera-SHOP_W,w:SHOP_W,y:ground-SHOP_H,inside:false,entered:false,done:false,tutorial:!shopTutorialSeen};shopTutorialSeen=true;}}
+ if(!shop)return;
+ shop.x=shopBoundary-camera-SHOP_W;
+ const a=shop.x,b=a+SHOP_W,c=bun.x+bun.w/2, bottom=bun.y+bun.h;
+ if(c>=a&&c<b&&!shop.done){
+  if(!shop.entered){shop.entered=true;shop.inside=bottom>shop.y+12;if(shop.inside&&bun.y<shop.y+22&&!testSafe){gameOver();return;}}
+  if(shop.inside){if(bun.y<shop.y+22 && !testSafe){gameOver();return;}}
+  else if(bun.vy>=0&&previousBottom<=shop.y+12&&bottom>=shop.y){bun.y=shop.y-bun.h;bun.vy=0;bun.jumps=0;}
+ }
+ if(c>=b&&!shop.done){shop.done=true;if(shop.inside){powerBurst=.85;invincible=1;score+=500;viinerBanner=2.3;chirp(880,.15);}}
+ if(b< -40)shop=null;
+}
+function drawRestaurantBack(x,y,t){
+ const sx=x-95,sy=ground-226,ink='#30231c';
+ rounded(sx+37,sy+80,12,146,2,'#aeb4b0',ink,2);
+ line(sx+41,sy+84,sx+41,ground-3,'#e4e0d2',2);
+ rounded(sx-5,sy+3,93,89,2,'#423c36',ink,2);
+ rounded(sx,sy,88,89,2,t.band,ink,3);
+ ctx.save();ctx.textAlign='center';ctx.fillStyle=t.letters;ctx.font='bold 19px Oswald, sans-serif';
+ t.sign.forEach((word,i)=>ctx.fillText(word,sx+44,sy+(t.sign.length===3?24:34)+i*23,80));ctx.restore();
+ rounded(x,y+18,SHOP_W,SHOP_H-18,2,t.interior,ink,3);
+ rounded(x+55,y+38,190,74,2,'#b39a79',ink,2);
+ if(shop.kind===3){for(let i=0;i<3;i++){const lx=x+80+i*70;line(lx,y+29,lx,y+49,ink,2);rounded(lx-12,y+49,24,8,3,'#e9b54e',ink,2);}}
+ else{for(let i=0;i<6;i++){rounded(x+67+i*28,y+48,19,25,1,shop.kind===2?'#9d5140':['#b34e32','#e2b65c','#748b75'][i%3],ink,1);}}
+ rounded(x+75,y+94,150,30,2,t.counter,ink,2);
+ rounded(x+115,y+79,65,17,2,'#d9d2bc',ink,2);
+ for(let i=0;i<5;i++)rounded(x+120+i*11,y+82,8,10,3,'#a74b32',ink,1);
+}
+function drawRestaurantFront(x,y,t){
+ const ink='#30231c';
+ rounded(x-5,y,310,29,2,t.band,ink,3);
+ if(shop.kind===1){for(let i=0;i<10;i++)line(x+i*30,y+2,x+i*30-5,y+27,'#d06c43',1.5);}
+ if(shop.kind===2){for(let i=0;i<30;i++)line(x+i*10,y+2,x+i*10,y+27,'#67472f',1);rounded(x+48,y+3,204,23,1,'#282625',ink,1);}
+ ctx.save();ctx.textAlign='center';ctx.font='bold 20px Oswald, sans-serif';ctx.fillStyle=t.letters;ctx.fillText(t.name,x+150,y+21,shop.kind===2?192:280);ctx.restore();
+ for(const dx of [0,48,112,188,252,296])rounded(x+dx,y+29,5,121,0,t.frame,ink,1);
+ ctx.save();ctx.globalAlpha=.15;ctx.fillStyle='#9bc8c5';ctx.fillRect(x+53,y+30,194,104);ctx.restore();
+ rounded(x+53,ground-16,194,16,0,t.base,ink,2);
+ if(shop.kind===3){for(let i=0;i<9;i++)line(x+55+i*23,ground-15,x+55+i*23,ground-1,'#9c8970',1);}
+ if(nightAmount()>.1){ctx.save();ctx.globalAlpha=nightAmount()*.16;ctx.fillStyle='#ffd98c';ctx.fillRect(x+5,y+30,290,104);ctx.restore();}
+}
+function drawShopBack(){if(!shop)return;const x=shop.x,y=shop.y;
+ if(shop.kind){drawRestaurantBack(x,y,SHOP_STYLES[shop.kind]);return;}
+ // Decorative roadside sign, deliberately outside the collision geometry.
+ const sx=x-78,sy=ground-226;
+ rounded(sx+29,sy+80,12,146,2,'#aeb4b0','#30231c',2);
+ line(sx+33,sy+84,sx+33,ground-3,'#e4e0d2',2);
+ rounded(sx-5,sy+3,75,89,2,'#423c36','#30231c',2);
+ rounded(sx,sy,70,89,2,'#b83126','#30231c',3);
+ ctx.fillStyle='#fff3d8';ctx.beginPath();ctx.arc(sx+35,sy+36,27,0,Math.PI*2);ctx.fill();
+ ctx.save();ctx.textAlign='center';ctx.font='bold 43px Arial,sans-serif';ctx.fillStyle='#b83126';ctx.fillText('K',sx+35,sy+51);ctx.restore();
+ rounded(sx+3,sy+72,64,13,0,'#e9b34e',null,0);line(sx+3,sy+71,sx+67,sy+71,'#fff3d8',3);
+
+ rounded(x,y+18,SHOP_W,SHOP_H-18,2,'#e6c99a','#30231c',3);
+ rounded(x+55,y+38,190,74,2,'#b9a382','#30231c',2);
+ for(let i=0;i<7;i++){rounded(x+65+i*24,y+48,15,25,2,['#a73b2b','#d8ad55','#738e83'][i%3],'#30231c',1);}
+ rounded(x+75,y+94,150,30,2,'#a65c43','#30231c',2);
+ rounded(x+115,y+79,65,17,2,'#d9d2bc','#30231c',2);
+ for(let i=0;i<5;i++)rounded(x+120+i*11,y+82,8,10,3,'#a74b32','#30231c',1);
+}
+function drawShopFront(){if(!shop)return;const x=shop.x,y=shop.y;
+ if(shop.kind){drawRestaurantFront(x,y,SHOP_STYLES[shop.kind]);}else{
+ rounded(x-5,y,310,25,2,'#b83126','#30231c',3);
+ rounded(x-4,y+24,308,5,0,'#e9b34e',null,0);
+ ctx.fillStyle='#fff3d8';ctx.font='bold 19px Oswald, sans-serif';ctx.textAlign='center';ctx.fillText('CIRCLE K',x+150,y+19);ctx.textAlign='start';
+ for(const dx of [0,48,112,188,252,296])rounded(x+dx,y+29,5,121,0,'#484a47','#30231c',1);
+ ctx.save();ctx.globalAlpha=.15;ctx.fillStyle='#9bc8c5';ctx.fillRect(x+53,y+30,194,104);ctx.restore();
+ rounded(x+53,ground-16,194,16,0,'#555753','#30231c',2);
+ if(nightAmount()>.1){ctx.save();ctx.globalAlpha=nightAmount()*.16;ctx.fillStyle='#ffd98c';ctx.fillRect(x+5,y+30,290,104);ctx.restore();}
+ }
+ if(shop.tutorial&&!shop.entered&&shop.x<W){
+ ctx.save();ctx.textAlign='center';ctx.font='29px Limelight, Georgia, serif';
+ const bw=640,bh=53,tx=Math.max(bw/2+8,Math.min(W-bw/2-8,shop.x+150)),ty=y-153;
+ rounded(tx-bw/2,ty-36,bw,bh,13,'#f8cb58','#33251a',4);
+ ctx.fillStyle='#a72e20';ctx.fillText('GO INSIDE STORE TO GET VIINER!!!',tx,ty,bw-24);
+ ctx.restore();}
+
+}
+
 // A continuous world: every building, tree and street prop has a permanent
 // world coordinate. The camera moves past them, so nothing fades or pops.
 const CAM_FACTOR=1;
@@ -1566,12 +1657,20 @@ function drawRoofSlideSmoke(){
  }
  ctx.restore();
 }
+function drawPowerBurst(){
+ if(powerBurst<=0||state!=='playing')return;
+ const t=1-powerBurst/.85,x=bun.x+bun.w/2,y=bun.y+bun.h/2,r=65+75*t;
+ ctx.save();ctx.translate(x,y);const glow=ctx.createRadialGradient(0,0,0,0,0,r);
+ glow.addColorStop(0,`rgba(255,255,190,${.94*(1-t)})`);glow.addColorStop(.38,`rgba(255,218,48,${.8*(1-t)})`);glow.addColorStop(1,'rgba(255,190,0,0)');ctx.fillStyle=glow;ctx.fillRect(-r,-r,r*2,r*2);
+ ctx.globalAlpha=(1-t)*.85;ctx.fillStyle='#ffe35a';for(let i=0;i<12;i++){const a=i*Math.PI/6+t*.45;ctx.save();ctx.rotate(a);ctx.beginPath();ctx.moveTo(32+t*30,-3);ctx.lineTo(r,0);ctx.lineTo(32+t*30,3);ctx.fill();ctx.restore();}
+ ctx.restore();
+}
 function draw(){
  ctx.clearRect(0,0,W,H);
  backdrop();
  for(const o of obstacles)drawObstacle(o);
  for(const p of pickups)drawPickup(p);
- drawTram();drawBus();drawGroundShadow();drawRoofSlideSmoke();if(state==='dying'||state==='over')drawDeath();else {if(hitGrace<=0||Math.floor(animation*16)%2===0)drawIllustratedBun();}drawFlyingSausage();
+ drawTram();drawBus();drawShopBack();drawGroundShadow();drawRoofSlideSmoke();if(state==='dying'||state==='over')drawDeath();else {if(hitGrace<=0||Math.floor(animation*16)%2===0)drawIllustratedBun();}drawFlyingSausage();drawShopFront();drawPowerBurst();
  if(busWarning>0 && bus && bus.x>W-100){ctx.fillStyle='#a72e20';ctx.font='bold 21px Oswald';ctx.fillText('BUS APPROACHING!',W-220,42)}
  if(testRun){rounded(W-195,14,178,33,4,'#fff2d5','#261b16',2);ctx.fillStyle='#261b16';ctx.font='bold 16px Oswald';ctx.fillText(testSafe?'TEST · NO DAMAGE':'TEST MODE',W-183,36)}
  if(viinerBanner>0 && state==='playing'){
@@ -1587,5 +1686,5 @@ function draw(){
 }
 function frame(t){const dt=Math.min(.04,(t-last)/1000||0);last=t;animation+=dt;tick(dt);draw();requestAnimationFrame(frame)}
 el('saveScore').addEventListener('click',e=>{e.preventDefault();saveInitials()});
-el('initialsForm').addEventListener('submit',e=>{e.preventDefault();saveInitials()});el('initials').addEventListener('input',()=>{el('initials').value=el('initials').value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,3);el('initials').setCustomValidity('')});canvas.addEventListener('pointerdown',e=>{e.preventDefault();if(el('overlay').classList.contains('hidden'))jump()});el('start').addEventListener('click',()=>reset());el('devLaunch').addEventListener('click',()=>{reset({district:el('devDistrict').value,time:el('devTime').value,safe:el('devSafe').checked});});document.addEventListener('keydown',e=>{if(['Space','ArrowUp'].includes(e.code)){e.preventDefault();if(!e.repeat&&!(state==='over'&&pendingScore!==null))jump()}});el('sound').onclick=()=>{sound=!sound;el('sound').textContent=sound?'♪ SOUND ON':'♪ SOUND OFF';el('sound').setAttribute('aria-pressed',String(sound));if(sound)chirp(600,.1)};updateScores();refreshHall();window.addEventListener('online',refreshHall);updateUI();requestAnimationFrame(frame);
+el('initialsForm').addEventListener('submit',e=>{e.preventDefault();saveInitials()});el('initials').addEventListener('input',()=>{el('initials').value=el('initials').value.toUpperCase().replace(/[^A-Z]/g,'').slice(0,3);el('initials').setCustomValidity('')});canvas.addEventListener('pointerdown',e=>{e.preventDefault();if(el('overlay').classList.contains('hidden'))jump()});el('start').addEventListener('click',()=>reset());el('devLaunch').addEventListener('click',()=>{reset({district:el('devDistrict').value,time:el('devTime').value,safe:el('devSafe').checked,near:el('devNear').checked});});document.addEventListener('keydown',e=>{if(['Space','ArrowUp'].includes(e.code)){e.preventDefault();if(!e.repeat&&!(state==='over'&&pendingScore!==null))jump()}});el('sound').onclick=()=>{sound=!sound;el('sound').textContent=sound?'♪ SOUND ON':'♪ SOUND OFF';el('sound').setAttribute('aria-pressed',String(sound));if(sound)chirp(600,.1)};updateScores();refreshHall();window.addEventListener('online',refreshHall);updateUI();requestAnimationFrame(frame);
 </script></body></html>
